@@ -202,7 +202,7 @@ namespace readers {
 
 			if (model->getNode(node->GetName())) {
 				log->warning(log::wSourceConvertFbxDuplicateNodeId, node->GetName());
-				return;
+				// return;
 			}
 			Node *n = new Node(node->GetName());
 			n->source = node;
