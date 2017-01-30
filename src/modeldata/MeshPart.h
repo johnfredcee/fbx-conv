@@ -34,7 +34,7 @@ namespace fbxconv {
 namespace modeldata {
 	struct MeshPart : public json::ConstSerializable {
 		std::string id;
-		std::vector<unsigned short> indices;
+		std::vector<unsigned int> indices;
 		unsigned int primitiveType;
 		std::vector<FbxCluster *> sourceBones;
 
@@ -54,7 +54,7 @@ namespace modeldata {
 			primitiveType = 0;
 		}
 
-		void set(const char *id, const unsigned int &primitiveType, const std::vector<unsigned short> &indices) {
+		void set(const char *id, const unsigned int &primitiveType, const std::vector<unsigned int> &indices) {
 			this->id = id;
 			this->primitiveType = primitiveType;
 			this->indices.clear();
