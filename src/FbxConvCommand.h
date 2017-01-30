@@ -141,7 +141,7 @@ private:
 			log->error(error = log::eCommandLineInvalidBoneCount);
 			return;
 		}
-		if (settings->maxVertexCount < 0 || settings->maxVertexCount > (1<<16)-1) {
+		if (settings->maxVertexCount < 0 || settings->maxVertexCount > (1<<19)-1) {
 			log->error(error = log::eCommandLineInvalidVertexCount);
 			return;
 		}

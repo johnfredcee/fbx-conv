@@ -492,7 +492,7 @@ namespace readers {
 					int indexCount = (mesh->GetPolygonCount() * 3);
 					log->verbose(log::iSourceConvertFbxMeshInfo, getGeometryName(mesh), mesh->GetPolygonCount(), indexCount, mesh->GetControlPointsCount());
 					if (indexCount > settings->maxIndexCount)
-						log->warning(log::wSourceConvertFbxExceedsIndices, indexCount, settings->maxIndexCount);
+						log->warning(log::wSourceConvertFbxExceedsIndices, getGeometryName(mesh), indexCount, settings->maxIndexCount);
 					if (mesh->GetElementMaterialCount() <= 0) {
 						log->error(log::wSourceConvertFbxNoMaterial, getGeometryName(mesh));
 						continue;
