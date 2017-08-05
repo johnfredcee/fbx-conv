@@ -104,14 +104,14 @@ project "fbx-conv"
 		
 	configuration { "vs*", "Debug" }
 		libdirs {
-			-- (FBX_SDK_ROOT .. "/lib/vs2010/x86/debug"),
-			"C:\\Program Files\\Autodesk\\FBX\\FBX SDK\\2017.1\\lib\\vs2015\\x86\\debug",
+			(FBX_SDK_ROOT .. "/lib/vs2015/x86/debug"),
+			-- "C:\\Program Files\\Autodesk\\FBX\\FBX SDK\\2017.1\\lib\\vs2015\\x86\\debug",
 		}
 		
 	configuration { "vs*", "Release" }
 		libdirs {
-			-- (FBX_SDK_ROOT .. "/lib/vs2010/x86/release"),
-			"C:\\Program Files\\Autodesk\\FBX\\FBX SDK\\2017.1\\lib\\vs2015\\x86\\release",
+			(FBX_SDK_ROOT .. "/lib/vs2015/x86/release"),
+			-- "C:\\Program Files\\Autodesk\\FBX\\FBX SDK\\2017.1\\lib\\vs2015\\x86\\release",
 		}
 
 	--- LINUX ----------------------------------------------------------
