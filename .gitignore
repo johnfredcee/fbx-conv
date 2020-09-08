@@ -11,3 +11,4 @@ build/
 /*.ilk
 /*.pdb
 /fbx-conv
+.vscode/
