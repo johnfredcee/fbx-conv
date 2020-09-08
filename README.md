@@ -1,6 +1,10 @@
 fbx-conv
 ========
 
+This is my personal fork of fbx-conv.
+
+The master branch just tracks upstream; the development happens on the jfc branch where it's built with CMake instead of premake and linked with an up to date fbx sdk.
+
 [![Build Status](https://travis-ci.org/libgdx/fbx-conv.svg?branch=master)](https://travis-ci.org/libgdx/fbx-conv)
 
 Command line utility using the FBX SDK to convert [FBX/Collada/Obj files](http://docs.autodesk.com/FBX/2014/ENU/FBX-SDK-Documentation/files/GUID-0B122E01-7DB8-48E3-AADA-5E85A197FEE1.htm)
