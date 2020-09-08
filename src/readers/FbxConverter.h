@@ -112,6 +112,16 @@ namespace readers {
 			importer->ParseForStatistics(true);
 
 			if (importer->Initialize(settings->inFile.c_str(), -1, manager->GetIOSettings())) {
+
+				int major = 0, minor = 0, revision = 0;
+				importer->GetFileVersion(major, minor, revision);
+				log->status(fbxconv::log::sSourceLoadFbxVersion, major, minor, revision);
+
+				FbxIOFileHeaderInfo * info = importer->GetFileHeaderInfo();
+				if(info->mFileVersion == 0) {
+					log->error(fbxconv::log::eSourceLoadFbxVersionUnknown, FBX_DEFAULT_FILE_VERSION);
+				}
+
 				importer->GetAxisInfo(&axisSystem, &systemUnits);
 				scene = FbxScene::Create(manager,"__FBX_SCENE__");
 				importer->Import(scene);
@@ -559,8 +569,10 @@ namespace readers {
 				result->ambient.set(lambert->Ambient.Get().mData);
 			if (lambert->Diffuse.IsValid())
 				result->diffuse.set(lambert->Diffuse.Get().mData);
-			if (lambert->Emissive.IsValid())
+			if (lambert->Emissive.IsValid()) {
+				result->emissiveFactor.set(lambert->EmissiveFactor.Get());
 				result->emissive.set(lambert->Emissive.Get().mData);
+			}
 
 			addTextures(result->id.c_str(), result->textures, lambert->Ambient, Material::Texture::Ambient);
 			addTextures(result->id.c_str(), result->textures, lambert->Diffuse, Material::Texture::Diffuse);
