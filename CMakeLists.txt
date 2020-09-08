@@ -47,7 +47,7 @@ file(
 message(STATUS "HEADERS = ${fbxconv_headers}")
 
 add_executable(
-    fbxconv WIN32 
+    fbxconv 
 	${fbxconv_source}
 	${fbxconv_headers}
 )
